@@ -27,7 +27,7 @@ class DateTimeValidator extends DateValidator implements NormalizerInterface
 
     protected function parseDateValue($value)
     {
-        if (strpos($value, 'T', true) !== false) {
+        if (str_contains($value, 'T') !== false) {
             $datetime = $this->parseExtendedDateValue($value);
         } else {
             $datetime = parent::parseDateValue($value);
